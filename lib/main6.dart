@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
               border: Border.symmetric(
                 vertical: BorderSide(
                   color: Color(0xFF33ABA0),
-                  width: 48,
+                  width: 50,
                 ),
                 horizontal: BorderSide(
                   color: Color(0xFF4DB6AC),
