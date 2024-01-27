@@ -25,34 +25,38 @@ class MyApp extends StatelessWidget {
         centerTitle: true,
         title: const Text('smile for mee'),
              toolbarHeight: 30,
+
       ),
-     body:Container(
-     child: Center(
-       child: Container(
-         alignment: Alignment.center,
-       height: 300, width: 300,
-           decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.orange,
-       ),
-         child: Container(
-           alignment: Alignment.topRight,
-           height: 50, width: 50,
-           decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white,
+    body: Center(
+    child: Container(
+    width: 420, height: 420,
+    alignment: Alignment.center,
+    decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.orange,),
+    child:Container(
+    width: 350, height: 350,
+    alignment: Alignment(-0.55, -0.50),
+    decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.orange,
+    border: Border(bottom: BorderSide(color: Colors.red,width: 77))
+    ),
+    child: Container(
+      width: 97, height: 97,
+    alignment: Alignment(90, 0),
+    decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle,
+    ),
 
-       ),
-           child: Container(
-             alignment: Alignment.topLeft,
-           height: 30, width: 50,
-           decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.red,
+    child: Container(
+    width: 94,
+    height: 94,
+    decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white,
+    ),
 
-           ),
-       ),
-       ),
-
-       ),
-     ),
-),
-     ),
-     ),
+              ),
+             ),
+            ),
+             ),
+          ),
+         ),
+      ),
      );
-}
+   }
 }
