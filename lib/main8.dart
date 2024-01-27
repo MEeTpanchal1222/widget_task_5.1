@@ -20,6 +20,11 @@ class MyApp extends StatelessWidget {
      home: SafeArea(child:
      Scaffold(
      backgroundColor: Colors.white,
+      bottomNavigationBar: const BottomAppBar(
+        color: Colors.orange,
+        child:
+        Center(child: Text('Emoji  😊',style: TextStyle(color: Colors.black87,fontSize: 40),)), 
+      ),
       appBar: AppBar(
          backgroundColor: Color(0xFFBBBBBB),
         centerTitle: true,
