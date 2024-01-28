@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
             appBar: AppBar(
               backgroundColor: Colors.blue,
               title: const Text(
-                'Button',
+                'gradiant-Button',
                 style: TextStyle(color: Colors.white),
               ),
               centerTitle: true,
@@ -37,15 +37,16 @@ class MyApp extends StatelessWidget {
                         color: Colors.pinkAccent,
                         blurRadius: 50,
                         spreadRadius: 4,
-                        offset: Offset(5,25),
+                        offset: Offset(7,35),
                       )
                     ],
                     // color: Colors.cyanAccent,
-                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
                     gradient: LinearGradient(
                       colors:[
                         Colors.purpleAccent,
                         Colors.pinkAccent,
+                        Colors.amberAccent,
                         Colors.redAccent,
                       ],
                       begin: Alignment.topLeft,
@@ -55,8 +56,8 @@ class MyApp extends StatelessWidget {
                   'Call on action',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 20,
-                    letterSpacing: 1,
+                    fontSize: 26,
+                    letterSpacing: 0.5,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
