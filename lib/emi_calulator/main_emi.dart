@@ -224,16 +224,6 @@ class _EMIState extends State<meetemi> {
                     ),
                     const SizedBox(height: 20),
 
-                    // ElevatedButton(
-                    //   onPressed: () {
-                    //     emi = calculateEMI();
-                    //     setState(() {});
-                    //   },
-                    //   child: Text(
-                    //     'Calculate',
-                    //     style: TextStyle(fontSize: 20),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
