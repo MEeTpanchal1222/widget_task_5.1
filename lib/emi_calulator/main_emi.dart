@@ -9,10 +9,10 @@ class meetemi extends StatefulWidget {
   const meetemi({Key? key}) : super(key: key);
 
   @override
-  State<meetemi> createState() => _EMIState();
+  State<meetemi> createState() => _meetemiState();
 }
 
-class _EMIState extends State<meetemi> {
+class _meetemiState extends State<meetemi> {
   double loanAmount = 100000.0;
   double interestRate = 10.0;
   double loanTenure = 24.0;
