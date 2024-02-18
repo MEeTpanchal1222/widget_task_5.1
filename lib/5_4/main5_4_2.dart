@@ -6,7 +6,7 @@ void main() {
 }
 
 class Map extends StatefulWidget {
-  const Map({super.key});
+   const Map({super.key});
 
   @override
   State<Map> createState() => _MapState();
@@ -49,7 +49,8 @@ class _MapState extends State<Map> {
   }
 }
 
-Widget containers(String text, IconData icons) {
+Widget containers(String text, IconData icons,)
+{
   return Container(
     margin: EdgeInsets.symmetric(vertical: 20),
     height: 90,
