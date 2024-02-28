@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -49,6 +51,11 @@ class _DigitalClockState extends State<DigitalClock> {
 
   @override
   Widget build(BuildContext context) {
+    DateTime dateTime = DateTime.now();
+    Timer.periodic(Duration(seconds: 1), (timer) { setState(() {
+      dateTime = DateTime.now();
+    });}
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text('Digital Clock'),
@@ -56,7 +63,38 @@ class _DigitalClockState extends State<DigitalClock> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
+             Stack(
+                children: [
+                Center(
+                  child: Container(
+                    height: 300,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      boxShadow: [
+                        BoxShadow(blurRadius: 30)
+                      ],
+
+                      shape: BoxShape.circle
+                    ),
+                  ),
+                ),
+
+                     Transform.rotate(
+                      angle: dateTime.second* 6* pi /180,
+                      child:const VerticalDivider(
+                        color: Colors.white ,thickness: 6,indent: 30,endIndent: 110,),
+                    ),
+
+
+                ],
+              ),
+
+
+           SizedBox(
+             height: 100,
+           ),
             Text(
               _time_String,//time
               style: TextStyle(fontSize: 50),
