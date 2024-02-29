@@ -51,9 +51,9 @@ class _DigitalClockState extends State<DigitalClock> {
 
   @override
   Widget build(BuildContext context) {
-    DateTime dateTime = DateTime.now();
+    DateTime dateTime1 = DateTime.now();
     Timer.periodic(Duration(seconds: 1), (timer) { setState(() {
-      dateTime = DateTime.now();
+      dateTime1 = DateTime.now();
     });}
     );
     return Scaffold(
@@ -71,21 +71,38 @@ class _DigitalClockState extends State<DigitalClock> {
                     height: 300,
                     width: 300,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: (dateTime1.hour <= 19)?Colors.white:Colors.black,
                       boxShadow: [
-                        BoxShadow(blurRadius: 30)
+                        BoxShadow(blurRadius: (dateTime1.hour == 12)?30:(dateTime1.hour ==13)?40:(dateTime1.hour ==14)?50:(dateTime1.hour ==15)?60:(dateTime1.hour ==16)?40:(dateTime1.hour ==17)?20:0)
                       ],
-
-                      shape: BoxShape.circle
+                        shape: BoxShape.circle
+                    ),
+                    child:  Center(
+                      child: Stack(
+                        children: [
+                          Transform.rotate(
+                              angle: dateTime1.second* 6* pi /180,
+                              child: VerticalDivider(
+                                color: (dateTime1.hour >= 19)?Colors.redAccent:Colors.red ,thickness: 6,indent: 30,endIndent: 130,),
+                            ),
+                          Transform.rotate(
+                            angle: dateTime1.minute* 6* pi /180,
+                            child:VerticalDivider(
+                              color:(dateTime1.hour >= 19)?Colors.white:Colors.black ,thickness: 8,indent: 40,endIndent: 130,),
+                          ),
+                          Transform.rotate(
+                            angle: dateTime1.hour*30+(dateTime1.minute*pi/180),
+                            child:VerticalDivider(
+                              color:(dateTime1.hour >= 19)?Colors.white:Colors.black  ,thickness: 6,indent: 70,endIndent: 130,),
+                          ),
+                        ],
+                      ),
+                    ),
                     ),
                   ),
-                ),
 
-                     Transform.rotate(
-                      angle: dateTime.second* 6* pi /180,
-                      child:const VerticalDivider(
-                        color: Colors.white ,thickness: 6,indent: 30,endIndent: 110,),
-                    ),
+
+
 
 
                 ],
@@ -93,11 +110,34 @@ class _DigitalClockState extends State<DigitalClock> {
 
 
            SizedBox(
-             height: 100,
+             height: 180,
            ),
+           if(dateTime1.hour < 12)
+            Text(
+              "Good Morning",//time
+              style: TextStyle(fontSize: 40),
+            ),
+            if(dateTime1.hour == 12)
+              Text(
+                "Good Noon",//time
+                style: TextStyle(fontSize: 40),
+              ),
+            if(dateTime1.hour >= 12)
+              Text(
+                "Good Afternoon",//time
+                style: TextStyle(fontSize: 40),
+              ),
+            if(dateTime1.hour >= 19)
+              Text(
+                "Good Night",//time
+                style: TextStyle(fontSize: 40),
+              ),
+            SizedBox(
+              height: 20,
+            ),
             Text(
               _time_String,//time
-              style: TextStyle(fontSize: 50),
+              style: TextStyle(fontSize: 40),
             ),
           ],
         ),
