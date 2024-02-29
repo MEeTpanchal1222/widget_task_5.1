@@ -58,8 +58,22 @@ class _DigitalClockState extends State<DigitalClock> {
     );
     return Scaffold(
       appBar: AppBar(
-        title: Text('Digital Clock'),
+        title: Row(
+          children: [
+            Text('Digital Clock'),
+            SizedBox(width: 170,),
+            Text('Edit',style: TextStyle(color: Colors.black),),
+            SizedBox(width: 20,),
+            Text('+',style: TextStyle(color: Colors.black,fontSize: 38),),
+          ],
+        ),
       ),
+      bottomNavigationBar:BottomNavigationBar(
+        items: [BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'alram'),
+          BottomNavigationBarItem(icon: Icon(Icons.access_time_filled_sharp),label: 'World clock'),
+          BottomNavigationBarItem(icon: Icon(Icons.stop_circle_rounded),label: 'Stoopwatch'),
+          //BottomNavigationBarItem(icon: Icon(Icons.watch),label: 'Timer')
+        ],),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -73,28 +87,48 @@ class _DigitalClockState extends State<DigitalClock> {
                     decoration: BoxDecoration(
                       color: (dateTime1.hour <= 19)?Colors.white:Colors.black,
                       boxShadow: [
-                        BoxShadow(blurRadius: (dateTime1.hour == 12)?30:(dateTime1.hour ==13)?40:(dateTime1.hour ==14)?50:(dateTime1.hour ==15)?60:(dateTime1.hour ==16)?40:(dateTime1.hour ==17)?20:0)
+                        BoxShadow(blurStyle: (dateTime1.hour >= 19)?BlurStyle.inner:(dateTime1.hour ==12)?BlurStyle.normal:(dateTime1.hour >12)?BlurStyle.outer:BlurStyle.normal,blurRadius: (dateTime1.hour == 12)?30:(dateTime1.hour ==13)?40:(dateTime1.hour ==14)?50:(dateTime1.hour ==15)?60:(dateTime1.hour ==16)?40:(dateTime1.hour ==17)?20:0)
                       ],
                         shape: BoxShape.circle
                     ),
                     child:  Center(
                       child: Stack(
                         children: [
-                          Transform.rotate(
-                              angle: dateTime1.second* 6* pi /180,
-                              child: VerticalDivider(
-                                color: (dateTime1.hour >= 19)?Colors.redAccent:Colors.red ,thickness: 6,indent: 30,endIndent: 130,),
+                          Center(
+                            child: Transform.rotate(
+                                angle: dateTime1.second* 6* pi /180,
+                                child: VerticalDivider(
+                                  color: (dateTime1.hour >= 19)?Colors.redAccent:Colors.red ,thickness: 6,indent: 30,endIndent: 130,),
+                              ),
+                          ),
+                          Center(
+                            child: Transform.rotate(
+                              angle: dateTime1.minute* 6* pi /180,
+                              child:VerticalDivider(
+                                color:(dateTime1.hour >= 19)?Colors.white:Colors.black ,thickness: 8,indent: 40,endIndent: 130,),
                             ),
-                          Transform.rotate(
-                            angle: dateTime1.minute* 6* pi /180,
-                            child:VerticalDivider(
-                              color:(dateTime1.hour >= 19)?Colors.white:Colors.black ,thickness: 8,indent: 40,endIndent: 130,),
                           ),
-                          Transform.rotate(
-                            angle: dateTime1.hour*30+(dateTime1.minute*pi/180),
-                            child:VerticalDivider(
-                              color:(dateTime1.hour >= 19)?Colors.white:Colors.black  ,thickness: 6,indent: 70,endIndent: 130,),
+                          Center(
+                            child: Transform.rotate(
+                              angle: dateTime1.hour*30*pi/180+((6 * pi /180)*(dateTime1.minute/12)),
+
+                              child:VerticalDivider(
+                                color:(dateTime1.hour >= 19)?Colors.white:Colors.black  ,thickness: 6,indent: 70,endIndent: 130,),
+                            ),
                           ),
+                          ...List.generate(60, (index) => Transform.rotate(
+
+                            angle: (index*6*pi)/180,
+                            child:
+                              Center(
+                                child: Divider(
+                                  indent: (index%5==0)?270:280,
+                                  color: (index%5==0)?Colors.black:(dateTime1.hour >= 19)?Colors.red:(dateTime1.hour >=19)?Colors.black:Colors.grey,
+                                  thickness: (index%5==0)?8:3,
+                                ),
+                              ),
+                            ),
+                          )
                         ],
                       ),
                     ),
@@ -110,7 +144,7 @@ class _DigitalClockState extends State<DigitalClock> {
 
 
            SizedBox(
-             height: 180,
+             height: 150,
            ),
            if(dateTime1.hour < 12)
             Text(
@@ -132,6 +166,22 @@ class _DigitalClockState extends State<DigitalClock> {
                 "Good Night",//time
                 style: TextStyle(fontSize: 40),
               ),
+            Text("India Standard Time"),
+            SizedBox(height: 10,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("${dateTime1.timeZoneName} "),
+                SizedBox(width: 15,),
+                (dateTime1.month ==1)?Text('JAN'): (dateTime1.month ==2)?Text('FEB'): (dateTime1.month ==3)?Text('MARCH'): (dateTime1.month ==4)?Text('APRIL'): (dateTime1.month ==5)?Text('MAY'): (dateTime1.month ==6)?Text('JUNE'): (dateTime1.month ==7)?Text('JULY'): (dateTime1.month ==8)?Text('AUG'): (dateTime1.month ==9)?Text('SEP'): (dateTime1.month ==10)?Text('OCT'): (dateTime1.month ==11)?Text('NOV'): (dateTime1.month ==12)?Text('DEC'):Text(' '),
+                SizedBox(width: 10,),
+                Text("${dateTime1.day}"),
+                SizedBox(width: 10,),
+                (dateTime1.weekday ==1)?Text('MONDAY'): (dateTime1.weekday ==2)?Text('TUESDAY'): (dateTime1.weekday ==3)?Text('WEDSDAY'):(dateTime1.weekday==4)?Text('THURESDAY'): (dateTime1.weekday ==5)?Text('FRIDAY'): (dateTime1.weekday ==6)?Text('SETRDAY'): (dateTime1.weekday==7)?Text('SUNDAY'):Text(""),
+              ],
+            ),
+
+
             SizedBox(
               height: 20,
             ),
