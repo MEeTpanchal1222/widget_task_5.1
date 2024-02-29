@@ -31,7 +31,7 @@ class _DigitalClockState extends State<DigitalClock> {
 //first we formet our data of time in string function and return the formated value;
   //we use padleft(2 degit and 0 for singal value like 1 that can we see 01;
   String _formatDateTime({required DateTime dateTime}) {
-    return '${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}:${dateTime.second.toString().padLeft(2, '0')}';
+    return '${(dateTime.hour%12).toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}:${dateTime.second.toString().padLeft(2, '0')}';
   }
   //now we store our data of time in string variable refrasha value of datatime  at variable
   void initState() {
