@@ -27,6 +27,8 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
   late Timer _timer;
   int _secondsElapsed = 0;
   bool _isRunning = false;
+  double second = 0;
+  bool isStop = true;
 
   @override
   void initState() {
@@ -71,15 +73,25 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
       _isRunning = false;
     });
   }
-  double _calculateProgressValue(int seconds) {
-    if (seconds <= 1) {
-      return 0.1;
-    } else if (seconds <= 60) {
-      return (seconds - 1) / 59;
-    } else {
-      return 1.0;
-    }
-  }
+ Future<void>stopwacth() async{
+    await Future.delayed(
+        const Duration(seconds: 1),
+        () {
+          setState(() {
+            if(second >= 0 && second <59){
+              second++;
+            }else{
+              second = 0;
+            }
+          });
+        },
+    );
+
+    if(isStop)
+      {
+        stopwacth();
+      }
+}
 
 
   @override
@@ -91,8 +103,16 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
       actions: [
         IconButton(
           icon: Icon(Icons.stop),
-          onPressed: _isRunning ? _stopTimer : null,
-        ),
+          onPressed: (){
+            setState(() {
+              _isRunning = true;
+              _isRunning ? _stopTimer: null;
+              isStop = false;
+            });
+
+          }
+
+      ),
         IconButton(
           icon: Icon(Icons.refresh),
           onPressed: _resetTimer,
@@ -126,14 +146,14 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                   width: 200,
                   height: 200,
                   child: CircularProgressIndicator(
-                    value:  _calculateProgressValue(_secondsElapsed),
+                    value:  second / 60,
                     strokeWidth: 10,
                     backgroundColor: Colors.grey[300],
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
                   ),
                 ),
                 Text(
-                  _formatTime(_secondsElapsed),
+                  _formatTime(second.toInt()),
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -143,6 +163,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
               onPressed: () {
                 if (!_isRunning) {
                   _startTimer();
+                  stopwacth();
                   setState(() {
                     _isRunning = true;
                   });
