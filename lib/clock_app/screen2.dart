@@ -153,7 +153,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                   ),
                 ),
                 Text(
-                  _formatTime(second.toInt()),
+                  _formatTime(_secondsElapsed),
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ],
