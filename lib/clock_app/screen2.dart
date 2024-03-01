@@ -71,7 +71,15 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
       _isRunning = false;
     });
   }
-
+  double _calculateProgressValue(int seconds) {
+    if (seconds <= 1) {
+      return 0.1;
+    } else if (seconds <= 60) {
+      return (seconds - 1) / 59;
+    } else {
+      return 1.0;
+    }
+  }
 
 
   @override
@@ -118,7 +126,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                   width: 200,
                   height: 200,
                   child: CircularProgressIndicator(
-                    value:(_secondsElapsed == 1)? 0 : _secondsElapsed / 60,
+                    value:  _calculateProgressValue(_secondsElapsed),
                     strokeWidth: 10,
                     backgroundColor: Colors.grey[300],
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
@@ -148,4 +156,3 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
     );
   }
 }
-
