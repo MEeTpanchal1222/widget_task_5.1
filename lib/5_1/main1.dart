@@ -43,17 +43,17 @@ class MyApp extends StatelessWidget {
               height: 350,
               alignment: Alignment.center,
               width: 350,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.green,
               ),
               child: Container(
                 height: 300,
                 alignment: Alignment.center,
                 width: 300,
-                decoration:BoxDecoration(
+                decoration:const BoxDecoration(
                   color: Colors.lightGreenAccent,
                 ) ,
-                child: Container(
+                child: const SizedBox(
                   height: 300,
                   width: 300,
                   child:Center(child: Text('oooo',style: TextStyle(color :Colors.black87,fontSize:95,letterSpacing: -29),)),

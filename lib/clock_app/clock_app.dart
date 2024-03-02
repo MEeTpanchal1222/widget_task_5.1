@@ -10,6 +10,8 @@ import 'package:untitled/clock_app/screen2.dart';
 
 
 class clock_app extends StatelessWidget {
+  const clock_app({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,12 +21,14 @@ class clock_app extends StatelessWidget {
         primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
-      home: DigitalClock(),
+      home: const DigitalClock(),
     );
   }
 }
 
 class DigitalClock extends StatefulWidget {
+  const DigitalClock({super.key});
+
   @override
   _DigitalClockState createState() => _DigitalClockState();
 }
@@ -37,6 +41,7 @@ class _DigitalClockState extends State<DigitalClock> {
     return '${(dateTime.hour%12).toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}:${dateTime.second.toString().padLeft(2, '0')}';
   }
   //now we store our data of time in string variable refrasha value of datatime  at variable
+  @override
   void initState() {
     _time_String = _formatDateTime(dateTime: DateTime.now());// store vaule of time in variable
     Timer.periodic(const Duration(seconds: 1),(timer)  => _getTime());//refesha value at variable by getTime function
@@ -72,15 +77,15 @@ class _DigitalClockState extends State<DigitalClock> {
         ),
       ),
       bottomNavigationBar:BottomNavigationBar(
-        items: [BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'alram'),
-           BottomNavigationBarItem(icon: Icon(Icons.access_time_filled_sharp),label: 'World clock'),
+        items: [const BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'alram'),
+           const BottomNavigationBarItem(icon: Icon(Icons.access_time_filled_sharp),label: 'World clock'),
            BottomNavigationBarItem(icon:GestureDetector(
              onTap: () {
                Navigator.push(
-                 context,MaterialPageRoute(builder: (context) => stopwacth())
+                 context,MaterialPageRoute(builder: (context) => const stopwacth())
                );
              },
-               child: Icon(Icons.stop_circle_rounded)),label: 'Stoopwatch'),
+               child: const Icon(Icons.stop_circle_rounded)),label: 'Stoopwatch'),
            //BottomNavigationBarItem(icon: Icon(Icons.watch),label: 'Timer')
            ],),
            body: Center(

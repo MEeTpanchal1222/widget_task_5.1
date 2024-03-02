@@ -18,18 +18,18 @@ class _MapState extends State<Map> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xFFEEEEEE),
+        backgroundColor: const Color(0xFFEEEEEE),
         appBar: AppBar(
           backgroundColor: Colors.blue,
           toolbarHeight: 60,
-          title: Text(
+          title: const Text(
             'Map',
             style: TextStyle(
               color: Colors.white,
             ),
           ),
           centerTitle: true,
-          leading: Icon(
+          leading: const Icon(
             Icons.menu,
             color: Colors.white,
           ),
@@ -52,10 +52,10 @@ class _MapState extends State<Map> {
 Widget containers(String text, IconData icons,)
 {
   return Container(
-    margin: EdgeInsets.symmetric(vertical: 20),
+    margin: const EdgeInsets.symmetric(vertical: 20),
     height: 90,
     width: double.infinity,
-    decoration: BoxDecoration(
+    decoration: const BoxDecoration(
       color: Colors.white,
     ),
     child: Row(
@@ -63,11 +63,11 @@ Widget containers(String text, IconData icons,)
       children: [
         Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 22,
           ),
         ),
-        SizedBox.square(
+        const SizedBox.square(
           dimension: 200,
         ),
         Icon(icons),

@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                 ),
-                child :Text('🔥',style: TextStyle(
+                child :const Text('🔥',style: TextStyle(
                   height: -2.2,
                   fontSize: 55,
 

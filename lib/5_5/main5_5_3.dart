@@ -43,7 +43,7 @@ class _Wall extends State<Wall> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                    margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
                     height: 95,
                     width: 191.1,
                     decoration: const BoxDecoration(

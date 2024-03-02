@@ -19,10 +19,10 @@ class _IconsState extends State<Icons> {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xFFFEFEFE),
+        backgroundColor: const Color(0xFFFEFEFE),
         appBar: AppBar(
           centerTitle: true,
-          title: Text('Icons'),
+          title: const Text('Icons'),
           backgroundColor: Colors.white,
           elevation: 10,
           shadowColor: Colors.black,
@@ -123,10 +123,10 @@ class _IconsState extends State<Icons> {
 Widget products(IconData icon)
 {
   return Container(
-    margin: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+    margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
     height: 120,
     width: 120,
-    decoration: BoxDecoration(
+    decoration: const BoxDecoration(
         color: Color(0xFFF5F5F5),
         borderRadius: BorderRadius.all(Radius.circular(10)),
         boxShadow: [

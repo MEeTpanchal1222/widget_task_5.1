@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class Product {
@@ -48,6 +48,8 @@ class Cart {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -55,19 +57,21 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ProductListScreen(),
+      home: const ProductListScreen(),
     );
   }
 }
 
 class ProductListScreen extends StatefulWidget {
+  const ProductListScreen({super.key});
+
   @override
   _ProductListScreenState createState() => _ProductListScreenState();
 }
 
 class _ProductListScreenState extends State<ProductListScreen> {
   double _sliderValue = 50; // Initial slider value
-  List<Product> _products = [
+  final List<Product> _products = [
     Product(name: 'Product 1', category: 'Category A', price: 20),
     Product(name: 'Product 2', category: 'Category B', price: 30),
     Product(name: 'Product 3', category: 'Category A', price: 25),
@@ -75,7 +79,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
   ];
 
   List<Product> _filteredProducts = [];
-  Cart _cart = Cart();
+  final Cart _cart = Cart();
 
   @override
   void initState() {
@@ -107,11 +111,11 @@ class _ProductListScreenState extends State<ProductListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Product List'),
+        title: const Text('Product List'),
         actions: <Widget>[
           IconButton(
             onPressed: _navigateToCartScreen,
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
           ),
         ],
       ),
@@ -128,11 +132,11 @@ class _ProductListScreenState extends State<ProductListScreen> {
             children: <Widget>[
               ElevatedButton(
                 onPressed: () => _filterByCategory('Category A'),
-                child: Text('Category A'),
+                child: const Text('Category A'),
               ),
               ElevatedButton(
                 onPressed: () => _filterByCategory('Category B'),
-                child: Text('Category B'),
+                child: const Text('Category B'),
               ),
             ],
           ),
@@ -145,10 +149,10 @@ class _ProductListScreenState extends State<ProductListScreen> {
                   title: Text(product.name),
                   subtitle: Text('Category: ${product.category}, Price: \$${product.price.toStringAsFixed(2)}'),
                   trailing: IconButton(
-                    icon: Icon(Icons.add_shopping_cart),
+                    icon: const Icon(Icons.add_shopping_cart),
                     onPressed: () {
                       _cart.addToCart(product);
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text('Added to cart'),
                       ));
                     },
@@ -166,13 +170,13 @@ class _ProductListScreenState extends State<ProductListScreen> {
 class CartScreen extends StatelessWidget {
   final Cart cart;
 
-  const CartScreen({Key? key, required this.cart}) : super(key: key);
+  const CartScreen({super.key, required this.cart});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shopping Cart'),
+        title: const Text('Shopping Cart'),
       ),
       body: Column(
         children: <Widget>[
@@ -185,10 +189,10 @@ class CartScreen extends StatelessWidget {
                   title: Text(item.product.name),
                   subtitle: Text('Quantity: ${item.quantity}, Price: \$${(item.product.price * item.quantity).toStringAsFixed(2)}'),
                   trailing: IconButton(
-                    icon: Icon(Icons.remove_shopping_cart),
+                    icon: const Icon(Icons.remove_shopping_cart),
                     onPressed: () {
                       cart.removeFromCart(item.product);
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text('Removed from cart'),
                       ));
                     },
@@ -201,7 +205,7 @@ class CartScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               'Total: \$${cart.total.toStringAsFixed(2)}',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
         ],

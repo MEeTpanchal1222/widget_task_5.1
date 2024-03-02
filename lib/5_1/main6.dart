@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       home: SafeArea(child:
       Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromRGBO(0, 150, 136,100),
+          backgroundColor: const Color.fromRGBO(0, 150, 136,100),
           // leading:  Icon(Icons.shopping_bag_sharp,color: Colors.pinkAccent,
           // size: 40,),
           title: const Text('3d Cube', style: TextStyle(

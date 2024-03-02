@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       home: SafeArea(child:
       Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF4CAF50),
+          backgroundColor: const Color(0xFF4CAF50),
           // leading:  Icon(Icons.shopping_bag_sharp,color: Colors.pinkAccent,
           // size: 40,),
           title: const Text('Letter cover', style: TextStyle(

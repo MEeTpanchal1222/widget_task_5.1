@@ -5,7 +5,7 @@ void main() {
 }
 
 class Selecter extends StatefulWidget {
-  const Selecter({Key? key}) : super(key: key);
+  const Selecter({super.key});
 
   @override
   _SelecterState createState() => _SelecterState();
@@ -50,10 +50,10 @@ class _SelecterState extends State<Selecter> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xFFEFF1F3),
+        backgroundColor: const Color(0xFFEFF1F3),
         appBar: AppBar(
           backgroundColor: Colors.white,
-          title: Text('Icons_Editor'),
+          title: const Text('Icons_Editor'),
           centerTitle: true,
           elevation: 5,
           shadowColor: Colors.black,
@@ -61,10 +61,10 @@ class _SelecterState extends State<Selecter> {
         body: Column(
           children: [
             Container(
-              margin: EdgeInsets.symmetric(vertical: 20),
+              margin: const EdgeInsets.symmetric(vertical: 20),
               height: 280,
               width: 390,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   boxShadow: [
@@ -76,7 +76,7 @@ class _SelecterState extends State<Selecter> {
                   ]
               ),
               child: Container(
-                margin: EdgeInsets.only(top: 20),
+                margin: const EdgeInsets.only(top: 20),
                 child: Icon(
                   icons[selectedIconIndex],
                   size: 100,
@@ -85,10 +85,10 @@ class _SelecterState extends State<Selecter> {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(vertical: 16,horizontal: 131),
+              padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 131),
               height: 60,
               width: 390,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   boxShadow: [
@@ -99,7 +99,7 @@ class _SelecterState extends State<Selecter> {
                     ),
                   ]
               ),
-              child: Text('Select Color',style: TextStyle(
+              child: const Text('Select Color',style: TextStyle(
                 color: Colors.black54,
                 fontSize: 23,
                 fontWeight: FontWeight.w500,
@@ -107,10 +107,10 @@ class _SelecterState extends State<Selecter> {
             ),
 
             Container(
-              margin: EdgeInsets.symmetric(vertical: 20),
+              margin: const EdgeInsets.symmetric(vertical: 20),
               height: 120,
               width: 390,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   boxShadow: [
@@ -122,7 +122,7 @@ class _SelecterState extends State<Selecter> {
                   ]
               ),
               child: Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
+                margin: const EdgeInsets.symmetric(vertical: 5),
                 height: 100,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -137,7 +137,7 @@ class _SelecterState extends State<Selecter> {
                       child: Container(
                         width: 90,
                         height: 80,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: colors[index],
                           borderRadius: BorderRadius.circular(50),
@@ -152,10 +152,10 @@ class _SelecterState extends State<Selecter> {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(vertical: 16,horizontal: 130),
+              padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 130),
               height: 60,
               width: 390,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   boxShadow: [
@@ -166,7 +166,7 @@ class _SelecterState extends State<Selecter> {
                     ),
                   ]
               ),
-              child: Text('Select Icon',style: TextStyle(
+              child: const Text('Select Icon',style: TextStyle(
                 color: Colors.black54,
                 fontSize: 23,
                 fontWeight: FontWeight.w500,
@@ -174,10 +174,10 @@ class _SelecterState extends State<Selecter> {
             ),
 
             Container(
-              margin: EdgeInsets.symmetric(vertical: 20,horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 20,horizontal: 10),
               height: 120,
               width: 390,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   boxShadow: [
@@ -190,7 +190,7 @@ class _SelecterState extends State<Selecter> {
               ),
 
               child: Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
+                margin: const EdgeInsets.symmetric(vertical: 10),
                 height: 100,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -205,10 +205,10 @@ class _SelecterState extends State<Selecter> {
                       child: Container(
                         width: 80,
                         height: 80,
-                        margin: EdgeInsets.all(8),
+                        margin: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               color: Colors.black12,
                               spreadRadius: 0.01,

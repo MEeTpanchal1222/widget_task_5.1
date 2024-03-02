@@ -5,7 +5,7 @@ void main() {
 }
 
 class Gmail extends StatefulWidget {
-  const Gmail({Key? key}) : super(key: key);
+  const Gmail({super.key});
 
   @override
   State<Gmail> createState() => _GmailState();

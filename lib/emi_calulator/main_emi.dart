@@ -6,7 +6,7 @@ void main() {
 }
 
 class meetemi extends StatefulWidget {
-  const meetemi({Key? key}) : super(key: key);
+  const meetemi({super.key});
 
   @override
   State<meetemi> createState() => _meetemiState();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main()
 {
-  runApp(Calulator());
+  runApp(const Calulator());
 }
 
 class Calulator extends StatefulWidget {
@@ -20,14 +20,14 @@ class _CalState extends State<Calulator> {
         home: Scaffold(
           appBar: AppBar(
             toolbarHeight: 80,
-            leading: Icon(
+            leading: const Icon(
               Icons.menu,
               color: Colors.white,
             ),
-            title: Text('Calulator',style: TextStyle(
+            title: const Text('Calulator',style: TextStyle(
               color: Colors.white,
             ),),
-            backgroundColor: Color(0xFF54759E),
+            backgroundColor: const Color(0xFF54759E),
 
             centerTitle: true,
 
@@ -40,7 +40,7 @@ class _CalState extends State<Calulator> {
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Text("$count",style: TextStyle(
+                  children: [Text("$count",style: const TextStyle(
                     color: Color(0xFF9E9E9E),
                     fontSize: 100,
                   ),),],
@@ -54,22 +54,22 @@ class _CalState extends State<Calulator> {
                         });
                       },
                       child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 40,vertical: 20),
-                        padding: EdgeInsets.symmetric(horizontal: 50,vertical: 10),
+                        margin: const EdgeInsets.symmetric(horizontal: 40,vertical: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 10),
                         height: 60,
                         width: 150,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color(0xFF54759E),
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                         ),
-                        child: Text('- 2',style: TextStyle(
+                        child: const Text('- 2',style: TextStyle(
                           color: Colors.white,
                           fontSize: 30,
                         ),
                         ),
                       ),
                     ),
-                    SizedBox.square(dimension: 0,),
+                    const SizedBox.square(dimension: 0,),
                     InkWell(
                       onTap: () {
                         setState(() {
@@ -77,14 +77,14 @@ class _CalState extends State<Calulator> {
                         });
                       },
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 50,vertical: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 10),
                         height: 60,
                         width: 150,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color(0xFF54759E),
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                         ),
-                        child: Text('+ 2',style: TextStyle(
+                        child: const Text('+ 2',style: TextStyle(
                           color: Colors.white,
                           fontSize: 30,
                         ),
@@ -102,15 +102,15 @@ class _CalState extends State<Calulator> {
                         });
                       },
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 50,vertical: 10),
-                        margin: EdgeInsets.symmetric(horizontal: 40,vertical: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 10),
+                        margin: const EdgeInsets.symmetric(horizontal: 40,vertical: 20),
                         height: 60,
                         width: 150,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color(0xFF54759E),
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                         ),
-                        child: Text('- 4',style: TextStyle(
+                        child: const Text('- 4',style: TextStyle(
                           color: Colors.white,
                           fontSize: 30,
                         ),
@@ -124,14 +124,14 @@ class _CalState extends State<Calulator> {
                         });
                       },
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 50,vertical: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 10),
                         height: 60,
                         width: 150,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color(0xFF54759E),
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                         ),
-                        child: Text('+ 4',style: TextStyle(
+                        child: const Text('+ 4',style: TextStyle(
                           color: Colors.white,
                           fontSize: 30,
                         ),
@@ -149,15 +149,15 @@ class _CalState extends State<Calulator> {
                         });
                       },
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 39,vertical: 10),
-                        margin: EdgeInsets.symmetric(horizontal: 130,vertical: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 39,vertical: 10),
+                        margin: const EdgeInsets.symmetric(horizontal: 130,vertical: 20),
                         height: 60,
                         width: 150,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color(0xFF54759E),
                           borderRadius: BorderRadius.all(Radius.circular(7)),
                         ),
-                        child: Text('Clear',style: TextStyle(
+                        child: const Text('Clear',style: TextStyle(
                           color: Colors.white,
                           fontSize: 30  ,
                         ),

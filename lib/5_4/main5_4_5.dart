@@ -21,9 +21,9 @@ class _appState extends State<app> {
       home: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Color(0xff244D61),
+            backgroundColor: const Color(0xff244D61),
             centerTitle: true,
-            title: Text(
+            title: const Text(
               'Dynamic List',
               style: TextStyle(
                 color: Colors.white,
@@ -49,9 +49,9 @@ class _appState extends State<app> {
                     dynamiclist.add(count);
                   });
                 },
-                child: Icon(Icons.add),
+                child: const Icon(Icons.add),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               FloatingActionButton(
@@ -61,7 +61,7 @@ class _appState extends State<app> {
                     count--;
                   });
                 },
-                child: Text(
+                child: const Text(
                   '-',
                   style: TextStyle(
                     fontSize: 30,
@@ -80,17 +80,17 @@ int count = 1;
 
 Widget list(int? number) {
   return Container(
-    margin: EdgeInsets.only(top: 10),
+    margin: const EdgeInsets.only(top: 10),
     height: 100,
     width: 350,
     decoration: BoxDecoration(
-      color: (number! % 2 == 0) ? Color(0xff5689C0) : Color(0xff75E2FF),
+      color: (number! % 2 == 0) ? const Color(0xff5689C0) : const Color(0xff75E2FF),
       borderRadius: BorderRadius.circular(20),
     ),
     child: Center(
         child: Text(
           '$number',
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 20,
           ),

@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         Center(child: Text('Emoji  😊',style: TextStyle(color: Colors.black87,fontSize: 40),)), 
       ),
       appBar: AppBar(
-         backgroundColor: Color(0xFFBBBBBB),
+         backgroundColor: const Color(0xFFBBBBBB),
         centerTitle: true,
         title: const Text('smile for mee'),
              toolbarHeight: 30,
@@ -36,23 +36,23 @@ class MyApp extends StatelessWidget {
     child: Container(
     width: 420, height: 420,
     alignment: Alignment.center,
-    decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.orange,),
+    decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.orange,),
     child:Container(
     width: 350, height: 350,
-    alignment: Alignment(-0.55, -0.50),
-    decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.orange,
+    alignment: const Alignment(-0.55, -0.50),
+    decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.orange,
     border: Border(bottom: BorderSide(color: Colors.red,width: 77))
     ),
     child: Container(
       width: 97, height: 97,
-    alignment: Alignment(90, 0),
-    decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle,
+    alignment: const Alignment(90, 0),
+    decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle,
     ),
 
     child: Container(
     width: 94,
     height: 94,
-    decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white,
+    decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white,
     ),
 
               ),

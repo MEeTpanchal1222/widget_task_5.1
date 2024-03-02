@@ -21,10 +21,10 @@ class _BoltState extends State<Bolt> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF212121),
+          backgroundColor: const Color(0xFF212121),
           centerTitle: true,
           toolbarHeight: 70,
-          title: Text('BOLT',style: TextStyle(
+          title: const Text('BOLT',style: TextStyle(
             color: Colors.white,
             fontSize: 30,
             letterSpacing: 15,
@@ -36,20 +36,20 @@ class _BoltState extends State<Bolt> {
             Container(
               height: 800,
               width: 150,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xFFFFC107),
               ),
             ),
             Expanded(
               child:
               Container(
-                padding: EdgeInsets.symmetric(vertical: 350,horizontal:25),
+                padding: const EdgeInsets.symmetric(vertical: 350,horizontal:25),
                 height: 850,
                 width: 150,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xFF212121),
                 ),
-                child: Text('⚡',style: TextStyle(
+                child: const Text('⚡',style: TextStyle(
                   fontSize: 40,
                 )),
               ),
@@ -58,7 +58,7 @@ class _BoltState extends State<Bolt> {
             Container(
               height: 800,
               width: 140,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xFFFFC107),
               ),
             ),

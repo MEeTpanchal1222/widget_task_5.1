@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(AmazonApp());
+  runApp(const AmazonApp());
 }
 
 class AmazonApp extends StatelessWidget {
+  const AmazonApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,16 +17,18 @@ class AmazonApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => AmazonHome(),
-        '/product_detail': (context) => ProductDetailScreen(),
-        '/shopping_cart': (context) => ShoppingCartScreen(),
-        '/login': (context) => LoginScreen(),
+        '/': (context) => const AmazonHome(),
+        '/product_detail': (context) => const ProductDetailScreen(),
+        '/shopping_cart': (context) => const ShoppingCartScreen(),
+        '/login': (context) => const LoginScreen(),
       },
     );
   }
 }
 
 class AmazonHome extends StatefulWidget {
+  const AmazonHome({super.key});
+
   @override
   _AmazonHomeState createState() => _AmazonHomeState();
 }
@@ -49,10 +53,10 @@ class _AmazonHomeState extends State<AmazonHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Amazon'),
+        title: const Text('Amazon'),
         actions: [
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {
               // Toggle search functionality
               // For simplicity, we'll just print the search query
@@ -60,13 +64,13 @@ class _AmazonHomeState extends State<AmazonHome> {
             },
           ),
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
             onPressed: () {
               Navigator.pushNamed(context, '/shopping_cart');
             },
           ),
           IconButton(
-            icon: Icon(Icons.person),
+            icon: const Icon(Icons.person),
             onPressed: () {
               Navigator.pushNamed(context, '/login');
             },
@@ -76,14 +80,14 @@ class _AmazonHomeState extends State<AmazonHome> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text(
               'Categories',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
-          Container(
+          SizedBox(
             height: 50,
             child: ListView(
               scrollDirection: Axis.horizontal,
@@ -96,19 +100,19 @@ class _AmazonHomeState extends State<AmazonHome> {
               ],
             ),
           ),
-          Divider(),
+          const Divider(),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Search...',
                 prefixIcon: Icon(Icons.search),
               ),
               onChanged: _updateSearchQuery,
             ),
           ),
-          Divider(),
-          Padding(
+          const Divider(),
+          const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text(
               'Products',
@@ -120,7 +124,7 @@ class _AmazonHomeState extends State<AmazonHome> {
               future: ProductService.getProducts(_selectedCategory, _searchQuery),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 } else if (snapshot.hasError) {
                   return Center(child: Text('Error: ${snapshot.error}'));
                 } else {
@@ -155,7 +159,7 @@ class _AmazonHomeState extends State<AmazonHome> {
 
   Widget _buildCategoryChip(String category) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: ChoiceChip(
         label: Text(category),
         selected: _selectedCategory == category,
@@ -184,7 +188,7 @@ class Product {
 class ProductService {
   static Future<List<Product>> getProducts(String category, String searchQuery) async {
     // Simulating fetching products from a backend service
-    await Future.delayed(Duration(seconds: 2)); // Simulating delay
+    await Future.delayed(const Duration(seconds: 2)); // Simulating delay
     return List.generate(
       20,
           (index) => Product(
@@ -198,13 +202,15 @@ class ProductService {
 }
 
 class ProductDetailScreen extends StatelessWidget {
+  const ProductDetailScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Product Detail'),
+        title: const Text('Product Detail'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Product Detail Screen'),
       ),
     );
@@ -212,13 +218,15 @@ class ProductDetailScreen extends StatelessWidget {
 }
 
 class ShoppingCartScreen extends StatelessWidget {
+  const ShoppingCartScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shopping Cart'),
+        title: const Text('Shopping Cart'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Shopping Cart Screen'),
       ),
     );
@@ -226,13 +234,15 @@ class ShoppingCartScreen extends StatelessWidget {
 }
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Login Screen'),
       ),
     );

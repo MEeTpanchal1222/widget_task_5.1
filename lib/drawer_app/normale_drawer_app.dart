@@ -6,7 +6,7 @@ void main() {
 }
 
 class ProfileSlide extends StatefulWidget {
-  const ProfileSlide({Key? key}) : super(key: key);
+  const ProfileSlide({super.key});
 
   @override
   State<ProfileSlide> createState() => _ProfileSlideState();
@@ -34,7 +34,7 @@ class _ProfileSlideState extends State<ProfileSlide> {
                       // begin: Alignment.topCenter,
                       // end: Alignment.bottomCenter,
                       colors: [
-                        Color(0xFFDBA2FA0),
+                        Color(0xffdba2fa0),
                         Color(0xff5e5596ff),
                       ],
                     ),
@@ -137,7 +137,7 @@ class _ProfileSlideState extends State<ProfileSlide> {
             ),
           ),
           appBar: AppBar(
-            backgroundColor: const Color(0xFFDBA2FA0),
+            backgroundColor: const Color(0xffdba2fa0),
             // Make the app bar transparent
             title: const Text(
               'My profile',

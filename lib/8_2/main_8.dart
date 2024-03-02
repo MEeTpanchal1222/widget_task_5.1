@@ -230,8 +230,8 @@ class _StackappState extends State<Stackapp> {
                             offset: Offset(5, 10),
                           )
                         ]),
-                    child: Center(
-                      child: const Text(
+                    child: const Center(
+                      child: Text(
                         'RedAccent',
                         style: TextStyle(
                           color: Colors.white,
