@@ -9,13 +9,13 @@ class stopwacth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Digital Clock',
-        theme: ThemeData(
+      debugShowCheckedModeBanner: false,
+      title: 'Digital Clock',
+      theme: ThemeData(
         primarySwatch: Colors.blue,
         useMaterial3: true,
-    ),
-    home:StopwatchScreen(), );
+      ),
+      home:StopwatchScreen(), );
   }
 }
 class StopwatchScreen extends StatefulWidget {
@@ -27,6 +27,8 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
   late Timer _timer;
   int _secondsElapsed = 0;
   bool _isRunning = false;
+  double second = 0;
+  bool isStop = true;
 
   @override
   void initState() {
@@ -71,13 +73,23 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
       _isRunning = false;
     });
   }
-  double _calculateProgressValue(int seconds) {
-    if (seconds <= 1) {
-      return 0.1;
-    } else if (seconds <= 60) {
-      return (seconds - 1) / 59;
-    } else {
-      return 1.0;
+  Future<void>stopwacth() async{
+    await Future.delayed(
+      const Duration(seconds: 1),
+          () {
+        setState(() {
+          if(second >= 0 && second <59){
+            second++;
+          }else{
+            second = 0;
+          }
+        });
+      },
+    );
+
+    if(isStop)
+    {
+      stopwacth();
     }
   }
 
@@ -86,33 +98,41 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-    appBar: AppBar(
-         title:Text('Stopwatch'),
-      actions: [
-        IconButton(
-          icon: Icon(Icons.stop),
-          onPressed: _isRunning ? _stopTimer : null,
-        ),
-        IconButton(
-          icon: Icon(Icons.refresh),
-          onPressed: _resetTimer,
-        ),
-      ],
+      appBar: AppBar(
+        title:Text('Stopwatch'),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.stop),
+              onPressed: (){
+                setState(() {
+                  _isRunning = true;
+                  _isRunning ? _stopTimer: null;
+                  isStop = false;
+                });
 
-    ),
+              }
+
+          ),
+          IconButton(
+            icon: Icon(Icons.refresh),
+            onPressed: _resetTimer,
+          ),
+        ],
+
+      ),
       bottomNavigationBar:BottomNavigationBar(
-      items: [BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'alram'),
-        BottomNavigationBarItem(icon: GestureDetector(
-          onTap: () {
-            Navigator.push(
-                context,MaterialPageRoute(builder: (context) => clock_app())
-            );
-          },
-            child: Icon(Icons.access_time_filled_sharp)),label: 'World clock'),
-        BottomNavigationBarItem(icon: Icon(Icons.stop_circle_rounded),label: 'Stoopwatch'),
-        //BottomNavigationBarItem(icon: Icon(Icons.watch),label: 'Timer')
-      ],
-    ),
+        items: [BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'alram'),
+          BottomNavigationBarItem(icon: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,MaterialPageRoute(builder: (context) => clock_app())
+                );
+              },
+              child: Icon(Icons.access_time_filled_sharp)),label: 'World clock'),
+          BottomNavigationBarItem(icon: Icon(Icons.stop_circle_rounded),label: 'Stoopwatch'),
+          //BottomNavigationBarItem(icon: Icon(Icons.watch),label: 'Timer')
+        ],
+      ),
 
 
       body: Center(
@@ -126,7 +146,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                   width: 200,
                   height: 200,
                   child: CircularProgressIndicator(
-                    value:  _calculateProgressValue(_secondsElapsed),
+                    value:  second / 60,
                     strokeWidth: 10,
                     backgroundColor: Colors.grey[300],
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
@@ -143,6 +163,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
               onPressed: () {
                 if (!_isRunning) {
                   _startTimer();
+                  stopwacth();
                   setState(() {
                     _isRunning = true;
                   });
