@@ -15,12 +15,10 @@ class stopwacth extends StatelessWidget {
         primarySwatch: Colors.blue,
         useMaterial3: true,
     ),
-    home:const StopwatchScreen(), );
+    home:StopwatchScreen(), );
   }
 }
 class StopwatchScreen extends StatefulWidget {
-  const StopwatchScreen({super.key});
-
   @override
   _StopwatchScreenState createState() => _StopwatchScreenState();
 }
@@ -42,7 +40,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
   }
 
   void _startTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
         _secondsElapsed++;
       });
@@ -89,29 +87,29 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
     return Scaffold(
 
     appBar: AppBar(
-         title:const Text('Stopwatch'),
+         title:Text('Stopwatch'),
       actions: [
         IconButton(
-          icon: const Icon(Icons.stop),
+          icon: Icon(Icons.stop),
           onPressed: _isRunning ? _stopTimer : null,
         ),
         IconButton(
-          icon: const Icon(Icons.refresh),
+          icon: Icon(Icons.refresh),
           onPressed: _resetTimer,
         ),
       ],
 
     ),
       bottomNavigationBar:BottomNavigationBar(
-      items: [const BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'alram'),
+      items: [BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'alram'),
         BottomNavigationBarItem(icon: GestureDetector(
           onTap: () {
             Navigator.push(
-                context,MaterialPageRoute(builder: (context) => const clock_app())
+                context,MaterialPageRoute(builder: (context) => clock_app())
             );
           },
-            child: const Icon(Icons.access_time_filled_sharp)),label: 'World clock'),
-        const BottomNavigationBarItem(icon: Icon(Icons.stop_circle_rounded),label: 'Stoopwatch'),
+            child: Icon(Icons.access_time_filled_sharp)),label: 'World clock'),
+        BottomNavigationBarItem(icon: Icon(Icons.stop_circle_rounded),label: 'Stoopwatch'),
         //BottomNavigationBarItem(icon: Icon(Icons.watch),label: 'Timer')
       ],
     ),
@@ -131,16 +129,16 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                     value:  _calculateProgressValue(_secondsElapsed),
                     strokeWidth: 10,
                     backgroundColor: Colors.grey[300],
-                    valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
                   ),
                 ),
                 Text(
                   _formatTime(_secondsElapsed),
-                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 if (!_isRunning) {
