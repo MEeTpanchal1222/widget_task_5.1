@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/clock_app/screen2.dart';
+import 'package:untitled/clock_app/screen3.dart';
 
 import 'clock_app.dart';
 
@@ -18,8 +19,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => const clock_app(),
-        '/stop': (context) =>  const stopwacth(),
+        '/': (context) =>  clock_app(),
+        '/stop': (context) =>  stopwacth(),
+        '/timer':(context) => TimerApp(),
 
       },
 

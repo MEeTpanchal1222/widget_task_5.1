@@ -29,6 +29,7 @@ class _TimerScreenState extends State<TimerScreen> {
   late Timer _timer;
   int _secondsElapsed = 0;
   bool _isRunning = false;
+  late int meet;
 
   @override
   void initState() {
@@ -142,10 +143,10 @@ class _TimerScreenState extends State<TimerScreen> {
                   width: 200,
                   height: 200,
                   child: CircularProgressIndicator(
-                    value: _secondsElapsed / 60,
+                    value: _secondsElapsed / (60 * meet) ,
                     strokeWidth: 15,
                     backgroundColor: Colors.grey[300],
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.purple.shade700),
                   ),
                 ),
                 Text(
@@ -163,6 +164,7 @@ class _TimerScreenState extends State<TimerScreen> {
                   onPressed: () {
                     if (!_isRunning) {
                       _startTimer();
+                      meet = 5;
                       setState(() {
                         _isRunning = true;
                         _secondsElapsed = 60 * 5;
@@ -176,6 +178,7 @@ class _TimerScreenState extends State<TimerScreen> {
                   onPressed: () {
                     if (!_isRunning) {
                       _startTimer();
+                      meet = 1;
                       setState(() {
                         _isRunning = true;
                         _secondsElapsed = 60 * 1;
@@ -194,6 +197,7 @@ class _TimerScreenState extends State<TimerScreen> {
                   onPressed: () {
                     if (!_isRunning) {
                       _startTimer();
+                      meet = 10;
                       setState(() {
                         _isRunning = true;
                         _secondsElapsed = 60 * 10;
@@ -207,6 +211,7 @@ class _TimerScreenState extends State<TimerScreen> {
                   onPressed: () {
                     if (!_isRunning) {
                       _startTimer();
+                      meet = 20;
                       setState(() {
                         _isRunning = true;
                         _secondsElapsed = 60 * 20;

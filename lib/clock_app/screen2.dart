@@ -131,7 +131,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                 context,MaterialPageRoute(builder: (context) =>TimerApp() )
             );
           },
-            child: Icon(Icons.alarm_rounded)),label: 'TIMER'),
+            child: Icon(Icons.alarm_rounded,color: Colors.grey,)),label: 'TIMER'),
           BottomNavigationBarItem(icon: GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -139,7 +139,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                 );
               },
               child: Icon(Icons.access_time_filled_sharp)),label: 'World clock'),
-          BottomNavigationBarItem(icon: Icon(Icons.stop_circle_rounded),label: 'Stopwatch'),
+          BottomNavigationBarItem(icon: Icon(Icons.stop_circle_rounded,color: Colors.purple.shade700,),label: 'Stopwatch'),
         ],
       ),
 
@@ -158,7 +158,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                     value: _secondsElapsed % 60 /60,
                     strokeWidth: 15,
                     backgroundColor: Colors.grey[300],
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.purple.shade700),
                   ),
                 ),
                 Text(
@@ -167,7 +167,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 70),
             ElevatedButton(
               onPressed: () {
 

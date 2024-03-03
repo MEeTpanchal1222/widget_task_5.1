@@ -67,7 +67,7 @@ class _DigitalClockState extends State<DigitalClock> {
     );
     return Scaffold(
       appBar: AppBar(
-        title: const Row(
+        title: Row(
           children: [
             Text('Digital Clock'),
             SizedBox(width: 170,),
@@ -84,15 +84,15 @@ class _DigitalClockState extends State<DigitalClock> {
                 context,MaterialPageRoute(builder: (context) =>TimerApp() )
             );
     },
-            child: Icon(Icons.alarm_rounded)),label: 'TIMER'),
-           const BottomNavigationBarItem(icon: Icon(Icons.access_time_filled_sharp),label: 'World clock'),
+            child: Icon(Icons.alarm_rounded,color: Colors.grey,)),label: 'TIMER',),
+            BottomNavigationBarItem(icon: Icon(Icons.access_time_filled_sharp,color: Colors.purple.shade700,),label: 'World clock'),
            BottomNavigationBarItem(icon:GestureDetector(
              onTap: () {
                Navigator.push(
-                 context,MaterialPageRoute(builder: (context) => const stopwacth())
+                 context,MaterialPageRoute(builder: (context) =>  stopwacth())
                );
              },
-               child: const Icon(Icons.stop_circle_rounded)),label: 'Stoopwatch'),
+               child: Icon(Icons.stop_circle_rounded)),label: 'Stoopwatch'),
            //BottomNavigationBarItem(icon: Icon(Icons.watch),label: 'Timer')
            ],),
            body: Center(
@@ -107,7 +107,7 @@ class _DigitalClockState extends State<DigitalClock> {
            height: 300,
            width: 300,
            decoration: BoxDecoration(
-           color: (dateTime1.hour <= 19)?Colors.white:Colors.black,
+           color: (dateTime1.hour <= 19)? Colors.black : Colors.white,
            boxShadow: [
            BoxShadow(blurStyle: (dateTime1.hour >= 19)?BlurStyle.inner:(dateTime1.hour ==12)?BlurStyle.normal:(dateTime1.hour >12)?BlurStyle.outer:BlurStyle.normal,blurRadius: (dateTime1.hour == 12)?30:(dateTime1.hour ==13)?40:(dateTime1.hour ==14)?50:(dateTime1.hour ==15)?60:(dateTime1.hour ==16)?40:(dateTime1.hour ==17)?20:0)
            ],
