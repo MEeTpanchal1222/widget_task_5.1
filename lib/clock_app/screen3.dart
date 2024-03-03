@@ -29,7 +29,7 @@ class _TimerScreenState extends State<TimerScreen> {
   late Timer _timer;
   int _secondsElapsed = 0;
   bool _isRunning = false;
-  late int meet;
+  late int meet = 0;
 
   @override
   void initState() {
