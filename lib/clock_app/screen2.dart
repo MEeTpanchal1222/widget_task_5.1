@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:untitled/clock_app/clock_app.dart';
+import 'package:untitled/clock_app/screen3.dart';
 
 
 class stopwacth extends StatelessWidget {
@@ -124,7 +125,13 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
 
       ),
       bottomNavigationBar:BottomNavigationBar(
-        items: [BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'TIMER'),
+        items: [BottomNavigationBarItem(icon: GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,MaterialPageRoute(builder: (context) =>TimerApp() )
+            );
+          },
+            child: Icon(Icons.alarm_rounded)),label: 'TIMER'),
           BottomNavigationBarItem(icon: GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -132,7 +139,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                 );
               },
               child: Icon(Icons.access_time_filled_sharp)),label: 'World clock'),
-          BottomNavigationBarItem(icon: Icon(Icons.stop_circle_rounded),label: 'Stoopwatch'),
+          BottomNavigationBarItem(icon: Icon(Icons.stop_circle_rounded),label: 'Stopwatch'),
         ],
       ),
 

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:untitled/clock_app/screen2.dart';
+import 'package:untitled/clock_app/screen3.dart';
 
 
 
@@ -77,7 +78,13 @@ class _DigitalClockState extends State<DigitalClock> {
         ),
       ),
       bottomNavigationBar:BottomNavigationBar(
-        items: [const BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'TIMER'),
+        items: [ BottomNavigationBarItem(icon: GestureDetector(
+          onTap: (){
+            Navigator.push(
+                context,MaterialPageRoute(builder: (context) =>TimerApp() )
+            );
+    },
+            child: Icon(Icons.alarm_rounded)),label: 'TIMER'),
            const BottomNavigationBarItem(icon: Icon(Icons.access_time_filled_sharp),label: 'World clock'),
            BottomNavigationBarItem(icon:GestureDetector(
              onTap: () {
