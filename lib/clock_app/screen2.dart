@@ -44,7 +44,10 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
   void _startTimer() {
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
-        _secondsElapsed++;
+        if(_isRunning )
+          {
+            _secondsElapsed++;
+            }
       });
     });
   }
@@ -73,25 +76,25 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
       _isRunning = false;
     });
   }
-  Future<void>stopwacth() async{
-    await Future.delayed(
-      const Duration(seconds: 1),
-          () {
-        setState(() {
-          if(second >= 0 && second <59){
-            second++;
-          }else{
-            second = 0;
-          }
-        });
-      },
-    );
-
-    if(isStop)
-    {
-      stopwacth();
-    }
-  }
+  // Future<void>stopwacth({required bool start}) async{
+  //   await Future.delayed(
+  //     const Duration(seconds: 1),
+  //         () {
+  //       setState(() {
+  //         if(second >= 0 && second <59 && start){
+  //           second++;
+  //         }else{
+  //           second = 0;
+  //         }
+  //       });
+  //     },
+  //   );
+  //
+  //   if(isStop)
+  //   {
+  //     stopwacth(start: true);
+  //   }
+  // }
 
 
   @override
@@ -105,9 +108,9 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
               icon: Icon(Icons.stop),
               onPressed: (){
                 setState(() {
-                  _isRunning = true;
-                  _isRunning ? _stopTimer: null;
-                  isStop = false;
+                  _isRunning = false;
+                  _isRunning ?null: _stopTimer;
+                  // stopwacth(start: false);
                 });
 
               }
@@ -121,7 +124,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
 
       ),
       bottomNavigationBar:BottomNavigationBar(
-        items: [BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'alram'),
+        items: [BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'TIMER'),
           BottomNavigationBarItem(icon: GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -130,7 +133,6 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
               },
               child: Icon(Icons.access_time_filled_sharp)),label: 'World clock'),
           BottomNavigationBarItem(icon: Icon(Icons.stop_circle_rounded),label: 'Stoopwatch'),
-          //BottomNavigationBarItem(icon: Icon(Icons.watch),label: 'Timer')
         ],
       ),
 
@@ -146,14 +148,14 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                   width: 200,
                   height: 200,
                   child: CircularProgressIndicator(
-                    value:  second / 60,
-                    strokeWidth: 10,
+                    value: _secondsElapsed % 60 /60,
+                    strokeWidth: 15,
                     backgroundColor: Colors.grey[300],
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
                   ),
                 ),
                 Text(
-                  _formatTime(_secondsElapsed),
+                    _formatTime(_secondsElapsed),
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -161,15 +163,17 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
+
                 if (!_isRunning) {
                   _startTimer();
-                  stopwacth();
+                  // stopwacth(start: true);
                   setState(() {
                     _isRunning = true;
+
                   });
                 }
               },
-              child: Text(_isRunning ? 'Running' : 'Start'),
+              child: Text(_isRunning ? 'Running ' : 'Start'),
             ),
           ],
         ),

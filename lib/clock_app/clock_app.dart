@@ -77,7 +77,7 @@ class _DigitalClockState extends State<DigitalClock> {
         ),
       ),
       bottomNavigationBar:BottomNavigationBar(
-        items: [const BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'alram'),
+        items: [const BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded),label: 'TIMER'),
            const BottomNavigationBarItem(icon: Icon(Icons.access_time_filled_sharp),label: 'World clock'),
            BottomNavigationBarItem(icon:GestureDetector(
              onTap: () {
@@ -92,6 +92,7 @@ class _DigitalClockState extends State<DigitalClock> {
            child: Column(
            mainAxisAlignment: MainAxisAlignment.center,
            children: [
+             SizedBox(height: 30,),
            Stack(
            children: [
            Center(
