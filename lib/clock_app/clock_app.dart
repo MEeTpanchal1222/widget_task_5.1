@@ -107,7 +107,7 @@ class _DigitalClockState extends State<DigitalClock> {
            height: 300,
            width: 300,
            decoration: BoxDecoration(
-           color: (dateTime1.hour <= 19)? Colors.black : Colors.white,
+           color: (dateTime1.hour < 19)? Colors.white: Colors.black,
            boxShadow: [
            BoxShadow(blurStyle: (dateTime1.hour >= 19)?BlurStyle.inner:(dateTime1.hour ==12)?BlurStyle.normal:(dateTime1.hour >12)?BlurStyle.outer:BlurStyle.normal,blurRadius: (dateTime1.hour == 12)?30:(dateTime1.hour ==13)?40:(dateTime1.hour ==14)?50:(dateTime1.hour ==15)?60:(dateTime1.hour ==16)?40:(dateTime1.hour ==17)?20:0)
            ],
