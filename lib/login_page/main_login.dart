@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/login_page/view/login_1.dart';
+import 'package:untitled/login_page/view/login_2.dart';
+void main() {
+
+  runApp(const login_main());
+}
 class login_main extends StatelessWidget {
   const login_main({super.key});
 
@@ -19,6 +25,12 @@ class _main_loginState extends State<main_login> {
   Widget build(BuildContext context) {
     return MaterialApp(
 
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/' : (context) => login_1(),
+        '/login' : (context) => login_2(),
+      },
     );
   }
 }
