@@ -26,6 +26,14 @@ Here are some screenshots of the application:
     <td><img src="https://github.com/MEeTpanchal1222/widget_task_5.1/assets/143181413/3f447d7a-beac-4905-90bf-109c0e9b7d9d.png" alt="Timer First" width="300" height="500"></td>
     <td><img src="https://github.com/MEeTpanchal1222/widget_task_5.1/assets/143181413/4851fb7b-abee-4a0a-b8a2-f445411055ec.png" alt="Timer Second" width="300" height="500"></td>
   </tr>
+   <tr>
+    <td><img src="https://github.com/MEeTpanchal1222/widget_task_5.1/assets/143181413/185dca72-fc7c-4a8b-b1cc-0a79b1f67795" alt="Stopwatch First" width="300" height="500"></td>
+    <td><img src="https://github.com/MEeTpanchal1222/widget_task_5.1/assets/143181413/9acc8b1d-8669-4231-8816-0662e9b555fe" alt="Timer First" width="300" height="500"></td>
+    <td><img src="https://github.com/MEeTpanchal1222/widget_task_5.1/assets/143181413/6870556e-2007-4e33-9373-9a70fad91fc8" alt="Timer Second" width="300" height="500"></td>
+  </tr>
+   <tr>
+    <td><img src="https://github.com/MEeTpanchal1222/widget_task_5.1/assets/143181413/95867b2d-29a0-4501-ab19-d5ec0bc7ee25" alt="Stopwatch First" width="300" height="500"></td>
+   </tr>
 </table>
 
 ## Getting Started
