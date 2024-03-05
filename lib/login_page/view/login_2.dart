@@ -43,7 +43,7 @@ class _login_2fulState extends State<login_2ful> {
                   children: [
                     Column(
                       children: [
-                        SizedBox(height: 70,),
+                        SizedBox(height: 80,),
                         Row(
                           children: [
                             SizedBox(width: 30,),
@@ -148,6 +148,56 @@ class _login_2fulState extends State<login_2ful> {
                 child: Center(child: Text("Login",style: TextStyle(fontSize: 22,fontWeight: FontWeight.w500),)),
               ),
             ),
+            SizedBox(height: 30,),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('-----------------------',style: TextStyle(letterSpacing: -1),),
+                  Text('Or sign up with'),
+                  Text('-----------------------',style: TextStyle(letterSpacing: -1),),
+                ],
+              )
+            ),
+            SizedBox(height: 100,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  height: 30,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(color: Colors.black,blurStyle: BlurStyle.outer,blurRadius: 10,spreadRadius:20 )
+                    ]
+                  ),
+                  child: Image.asset('assest/login_page_assest/img_5.png'),
+                ),
+                Container(
+                  height: 30,
+                  width: 60,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        BoxShadow(color: Colors.black,blurStyle: BlurStyle.outer,blurRadius: 10,spreadRadius:20 )
+                      ]
+                  ),
+                  child: Image.asset('assest/login_page_assest/img_6.png'),
+                ),
+                Container(
+                  height: 30,
+                  width: 60,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        BoxShadow(color: Colors.black,blurStyle: BlurStyle.outer,blurRadius: 10,spreadRadius:20 )
+                      ]
+                  ),
+                  child: Image.asset('assest/login_page_assest/img_7.png'),
+                ),
+              ],
+            )
 
           ],
         ),

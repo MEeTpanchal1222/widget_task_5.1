@@ -35,7 +35,7 @@ class _login_1fulState extends State<login_1ful> {
                   ),
                   Column(
                     children: [
-                      SizedBox(height: 130,),
+                      SizedBox(height: 150,),
                       Image.asset('assest/login_page_assest/img.png',height: 400,width: 400,),
                     ],
                   )
