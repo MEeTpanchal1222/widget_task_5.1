@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:untitled/login_page/view/login_1.dart';
 import 'package:untitled/login_page/view/login_2.dart';
 void main() {
@@ -10,7 +11,11 @@ class login_main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return main_login();
+
+      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: Color(0XFFFFC600), // Change it to whatever color you want
+      ));
+        return main_login();
   }
 }
 class main_login extends StatefulWidget {
@@ -24,7 +29,6 @@ class _main_loginState extends State<main_login> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
