@@ -12,7 +12,7 @@ Here are some screenshots of the application:
 
 <table>
   <tr>
-    <td><img src="https://github.com/MEeTpanchal1222/widget_task_5.1/assets/143181413/a52c61a7-4130-484d-9472-a37ce3a74df9.png" alt="Gmail" width="300" height="500"></td>
+    <td><img src="https://github.com/MEeTpanchal1222/widget_task_5.1/assets/143181413/a52c61a7-4130-484d-9472-a37ce3a74df9.png" alt="Gmail" width="300" height="550"></td>
     <td><img src="https://github.com/MEeTpanchal1222/widget_task_5.1/assets/143181413/05d1cbc3-37bc-4790-91ec-b536cef16403.png" alt="My Drawer" width="300" height="500"></td>
     <td><img src="https://github.com/MEeTpanchal1222/widget_task_5.1/assets/143181413/18ffde77-dd21-4545-bf40-7076d3406f9c.png" alt="Button Change" width="300" height="500"></td>
   </tr>
