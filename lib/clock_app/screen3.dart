@@ -27,9 +27,9 @@ class TimerScreen extends StatefulWidget {
 
 class _TimerScreenState extends State<TimerScreen> {
   late Timer _timer;
-  int _secondsElapsed = 0;
+  int _secondsElapsed = 1;
   bool _isRunning = false;
-  late int meet = 0;
+  late int meet = 1;
 
   @override
   void initState() {
@@ -47,7 +47,7 @@ class _TimerScreenState extends State<TimerScreen> {
       setState(() {
         if (_isRunning && _secondsElapsed > 0) {
           _secondsElapsed--;
-        } else {
+        } else  {
           _timer.cancel();
         }
       });
