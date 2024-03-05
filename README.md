@@ -8,9 +8,35 @@ This project is a starting point for a Flutter application.
 
 ## Screenshots
 
-Include screenshots or links to screenshots of your application here:
-- <img src="https://github.com/MEeTpanchal1222/widget_task_5.1/assets/143181413/a52c61a7-4130-484d-9472-a37ce3a74df9" alt="Gmail" width="300" height="600">
-- <img src="https://github.com/MEeTpanchal1222/widget_task_5.1/assets/143181413/05d1cbc3-37bc-4790-91ec-b536cef16403" alt="My Drawer" width="300" height="600">
+Here are some screenshots of the application:
+
+### Gmail
+<img src="https://github.com/MEeTpanchal1222/widget_task_5.1/blob/main/assets/143181413/a52c61a7-4130-484d-9472-a37ce3a74df9.png" alt="Gmail" width="300" height="600">
+
+### My Drawer
+<img src="https://github.com/MEeTpanchal1222/widget_task_5.1/blob/main/assets/143181413/05d1cbc3-37bc-4790-91ec-b536cef16403.png" alt="My Drawer" width="300" height="600">
+
+### Button Change
+<img src="https://github.com/MEeTpanchal1222/widget_task_5.1/blob/main/assets/143181413/18ffde77-dd21-4545-bf40-7076d3406f9c.png" alt="Button Change" width="300" height="600">
+
+### Light Theme Afternoon
+<img src="https://github.com/MEeTpanchal1222/widget_task_5.1/blob/main/assets/143181413/dbd1e213-b49c-4302-a4b9-ca4a904ec76e.png" alt="Light Theme Afternoon" width="300" height="600">
+
+### Light Theme Morning
+<img src="https://github.com/MEeTpanchal1222/widget_task_5.1/blob/main/assets/143181413/8b4e7da0-0f71-4d1f-baa9-77ada0e533d0.png" alt="Light Theme Morning" width="300" height="600">
+
+### Night Dark Theme
+<img src="https://github.com/MEeTpanchal1222/widget_task_5.1/blob/main/assets/143181413/8982cc7c-47dc-4bc9-b9e9-902d55c7b5e9.png" alt="Night Dark Theme" width="300" height="600">
+
+### Stopwatch First
+<img src="https://github.com/MEeTpanchal1222/widget_task_5.1/blob/main/assets/143181413/76c5737a-2bb2-4435-b291-b02c556f78ba.png" alt="Stopwatch First" width="300" height="600">
+
+### Timer First
+<img src="https://github.com/MEeTpanchal1222/widget_task_5.1/blob/main/assets/143181413/3f447d7a-beac-4905-90bf-109c0e9b7d9d.png" alt="Timer First" width="300" height="600">
+
+### Timer Second
+<img src="https://github.com/MEeTpanchal1222/widget_task_5.1/blob/main/assets/143181413/4851fb7b-abee-4a0a-b8a2-f445411055ec.png" alt="Timer Second" width="300" height="600">
+
 
 ## Getting Started
 
